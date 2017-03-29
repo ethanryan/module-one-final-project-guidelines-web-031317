@@ -1,4 +1,4 @@
-require "pry"
+require "giphy"
 
 class CommandLineInterface
 
@@ -21,6 +21,7 @@ class CommandLineInterface
     # a1 = Answer.all.first.answer
     #binding.pry
     #puts q1
+
     puts QUESTION
     user_input = gets.chomp
 
@@ -32,8 +33,30 @@ class CommandLineInterface
 
     if user_input == ANSWER
       puts "Correct!"
+      open_gif
     end
   end
+
+    # def open_gif
+      #link_to(body, url, html_options = {})
+      #puppy = https://giphy.com/gifs/funny-cute-cheezburger-DTgZq3XBUwQgM
+      #google = https://www.google.com/
+      #link_to(body, puppy, html_options = {})
+      #gif = giphy 'dance'
+      #link_to(puppy)
+      #{}`open #{google}`
+    # end
+
+
+    def open_gif
+      #giphy 'dance'
+      #exec 'echo hi'
+      exec 'giphy "dance"' #YES!!!! works
+    end
+end #end class
+
+
+
 
   # if user_input == a1
   #   puts "Correct!"
@@ -58,8 +81,6 @@ class CommandLineInterface
   # else
   #   puts "Try again!"
   # end #end if else statement
-
-end #end class
 
 
 

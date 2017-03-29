@@ -10,3 +10,5 @@ cli.welcome
 
 cli.quiz_script
 #call our script after welcome
+
+cli.open_gif
