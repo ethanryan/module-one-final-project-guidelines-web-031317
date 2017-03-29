@@ -7,3 +7,6 @@ cli = CommandLineInterface.new
 
 cli.welcome
 #call our welcome method within our CommandLineInterface class
+
+cli.quiz_script
+#call our script after welcome
