@@ -11,3 +11,10 @@ end
 #example question: "a puppy"
 
 #example question: "puppies"
+
+# *QuestionAnswer.where({question_id:2}) => [#<QuestionAnswer:0x007fb82282a190
+  # id: 1,
+  # question_id: 2,
+  # answer_id: 1,
+  # created_at: 2017-03-29 16:20:50 UTC,
+  # updated_at: 2017-03-29 16:20:50 UTC>]
