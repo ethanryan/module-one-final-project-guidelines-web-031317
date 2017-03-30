@@ -37,52 +37,12 @@ class CommandLineInterface
     end
   end
 
-    # def open_gif
-      #link_to(body, url, html_options = {})
-      #puppy = https://giphy.com/gifs/funny-cute-cheezburger-DTgZq3XBUwQgM
-      #google = https://www.google.com/
-      #link_to(body, puppy, html_options = {})
-      #gif = giphy 'dance'
-      #link_to(puppy)
-      #{}`open #{google}`
-    # end
-
-
     def open_gif
       #giphy 'dance'
-      #exec 'echo hi'
-      exec 'giphy "dance"' #YES!!!! works
+      #exec 'giphy "dance"' #YES!!!! works
+      exec "giphy '#{ANSWER}'" #YES!!!! works
     end
 end #end class
-
-
-
-
-  # if user_input == a1
-  #   puts "Correct!"
-  # else
-  #   until user_input == a1
-  #     puts "Try again!"
-  #     puts q1
-  #     user_input = gets.chomp
-  # end
-  #end
-
-  #a1 = Answer.all.first.answer
-
-
-  ########-----------------------------------
-  # puts "What do you call a baby dog?"
-  # user_input = gets.chomp
-  # if user_input == "puppy"
-  #   puts "Correct!"
-  #   #giphy 'puppy'
-  #   #Giphy.random('puppy')
-  # else
-  #   puts "Try again!"
-  # end #end if else statement
-
-
 
 
 
