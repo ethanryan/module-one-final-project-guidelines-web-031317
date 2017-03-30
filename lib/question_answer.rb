@@ -18,3 +18,5 @@ end
   # answer_id: 1,
   # created_at: 2017-03-29 16:20:50 UTC,
   # updated_at: 2017-03-29 16:20:50 UTC>]
+
+  # qa = QuestionAnswer.new(question_id: q.id, answer_id: a.id)

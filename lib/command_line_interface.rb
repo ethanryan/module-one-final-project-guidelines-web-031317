@@ -36,7 +36,8 @@ class CommandLineInterface
 
   RANDOM_QUESTION = Question.all.sample #this gets us a random question
   QUESTION = RANDOM_QUESTION.question
-  ANSWER = RANDOM_QUESTION.answers.first.answer
+  #ANSWER = RANDOM_QUESTION.answers.first.answer
+  ANSWER = RANDOM_QUESTION.answers[0].answer
   #ANSWER = Answer.all.sample.answer #how do we make sure the answer to the random question is the correcct one??
   #ANSWER needs to = (all caps question)....answers
 
@@ -56,13 +57,13 @@ class CommandLineInterface
       puts "Correct!"
       open_gif
     end
-  end
+  end #end quiz_script
 
     def open_gif
       #giphy 'dance'
       #exec 'giphy "dance"' #YES!!!! works
       exec "giphy '#{ANSWER}'" #YES!!!! works
-    end
+    end #end open_gif
 end #end class
 
 
