@@ -22,37 +22,246 @@ class CommandLineInterface
   #   user_input = gets.chomp
   # end
 
-  def three_wins
-    counter = 0
+  # def ask_question_and_get_answer
+  #   puts random_q
+  #   user_input = gets.chomp
+  # end
+
+
+
+# while conditional [do]
+#    code
+# end
+# Executes code while conditional is true.
+# A while loop's conditional is separated from
+# code by the reserved word do, a newline,
+#   backslash \, or a semicolon ;.
+
+
+# until conditional [do]
+#    code
+# end
+# Executes code while conditional is false.
+# An until statement's conditional is separated
+# from code by the reserved word do, a newline, or a semicolon.
+
+
+
+  def need_three_wins
     questions = ["aaa?", "bbbb?", "ccc?", "ddd?", "eeee?"]
-    answer = "yes"
+    test_answer = "yes"
     random_q = questions.sample
 
-    puts random_q
-    user_input = gets.chomp
+    # puts random_q
+    # user_input = gets.chomp
 
+    counter = 0
 
-    until user_input == answer
-      puts "\nTry again!\n\n"
+    until counter == 3
       puts random_q
       user_input = gets.chomp
-    end
 
-    if ((user_input == answer) && (counter < 2))
-      counter += 1
-      puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
-      puts random_q
-      user_input = gets.chomp
-    end #end if statement
+      if user_input == test_answer
+        counter += 1
+        puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+      else
+        puts "\nTry again!\n\n"
+      end#end if..else statement
+    end#end until loop
 
-    if ((user_input == answer) && (counter = 2))
-      counter += 1
-      puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+    if counter == 3
       puts "You win!"
       open_gif
-    end #end if statement
+    end
+  end #end method
 
-  end #end three_wins method
+      #binding.pry
+
+  #     puts "\nTry again!\n\n"
+  #     puts random_q
+  #     user_input = gets.chomp
+  #
+  #     if user_input == test_answer
+  #       counter += 1
+  #       puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+  #
+  #       if counter == 3
+  #         puts "You win!"
+  #         open_gif
+  #       else
+  #         puts random_q
+  #         user_input = gets.chomp
+  #       end #end if else statement
+  #     end #end if statement
+  #   end #end until loop
+  # end #end need_three_wins #method
+
+
+
+
+
+
+  #   questions = ["aaa?", "bbbb?", "ccc?", "ddd?", "eeee?"]
+  #   test_answer = "yes"
+  #   random_q = questions.sample
+  #   puts random_q
+  #   user_input = gets.chomp
+  #
+  #   until user_input == test_answer
+  #     puts "\nTry again!\n\n"
+  #     puts random_q
+  #     user_input = gets.chomp
+  #   end
+  #
+  #   if ((user_input == test_answer) && (counter < 2))
+  #     counter += 1
+  #     puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+  #     puts random_q
+  #     user_input = gets.chomp
+  #   end #end if statement
+  #
+  #   if ((user_input == test_answer) && (counter == 2))
+  #     counter += 1
+  #     puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+  #     puts "You win!"
+  #     open_gif
+  #   end #end if statement
+  # end #end method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # def three_wins
+  #   counter = 0
+  #   questions = ["aaa?", "bbbb?", "ccc?", "ddd?", "eeee?"]
+  #   test_answer = "yes"
+  #   random_q = questions.sample
+  #   puts random_q
+  #   user_input = gets.chomp
+  #
+  #   until user_input == test_answer
+  #     puts "\nTry again!\n\n"
+  #     puts random_q
+  #     user_input = gets.chomp
+  #   end
+  #
+  #   if ((user_input == test_answer) && (counter < 2))
+  #     counter += 1
+  #     puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+  #     puts random_q
+  #     user_input = gets.chomp
+  #   end #end if statement
+  #
+  #   if ((user_input == test_answer) && (counter = 2))
+  #     counter += 1
+  #     puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+  #     puts "You win!"
+  #     open_gif
+  #   end #end if statement
+  # end #end method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # def three_wins
+  #   counter = 0
+  #   questions = ["aaa?", "bbbb?", "ccc?", "ddd?", "eeee?"]
+  #   test_answer = "yes"
+  #   random_q = questions.sample
+  #   puts random_q
+  #   user_input = gets.chomp
+  #
+  #   # until user_input == test_answer
+  #   #   # puts "\nTry again!\n\n"
+  #   #   puts random_q
+  #   #   user_input = gets.chomp
+  #     if user_input == test_answer
+  #       # increase counter
+  #       counter += 1
+  #       puts random_q
+  #       user_input = gets.chomp
+  #       until counter == 3
+  #       end
+  #
+  #
+  #     else
+  #       puts "Wrong answer, try again!"
+  #       puts random_q
+  #       user_input = gets.chomp
+  #
+  #     end
+#end
+
+    # if ((user_input == test_answer) && (counter < 2))
+    #   counter += 1
+    #   puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+    #   puts random_q
+    #   user_input = gets.chomp
+    # end #end if statement
+    #
+    # if ((user_input == test_answer) && (counter == 2))
+    #   counter += 1
+    #   puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+    #   puts "You win!"
+    #   open_gif
+    # end #end if statement
+    #
+
+
+
+
+########almost works, but logic is off......
+  # def three_wins
+  #   counter = 0
+  #   questions = ["aaa?", "bbbb?", "ccc?", "ddd?", "eeee?"]
+  #   test_answer = "yes"
+  #   random_q = questions.sample
+  #   puts random_q
+  #   user_input = gets.chomp
+  #
+  #   until user_input == test_answer
+  #     puts "\nTry again!\n\n"
+  #     puts random_q
+  #     user_input = gets.chomp
+  #   end
+  #
+  #   if ((user_input == test_answer) && (counter < 2))
+  #     counter += 1
+  #     puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+  #     puts random_q
+  #     user_input = gets.chomp
+  #   end #end if statement
+  #
+  #   if ((user_input == test_answer) && (counter == 2))
+  #     counter += 1
+  #     puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+  #     puts "You win!"
+  #     open_gif
+  #   end #end if statement
+ #end three_wins method
+
 
 
   ################
@@ -60,12 +269,7 @@ class CommandLineInterface
 
 
 
-  # answers = ["A1", "A2", "A3"]
-  # questions = ["Q1", "Q2", "Q3"]
-  # q_a = {"Q1": "A1", "Q2": "A2", "Q3": "A2"}
-  # questions.all.sample.question
 
-  ####below will be third question:::::
 
   # q1 = Question.all.first.question
   # a1 = Answer.all.first.answer
