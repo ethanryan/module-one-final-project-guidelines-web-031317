@@ -8,7 +8,6 @@ cli = CommandLineInterface.new
 cli.welcome
 #call our welcome method within our CommandLineInterface class
 
-#cli.three_wins #testing three_wins logic
 cli.need_three_wins #testing three_wins logic
 
 #cli.quiz_script
