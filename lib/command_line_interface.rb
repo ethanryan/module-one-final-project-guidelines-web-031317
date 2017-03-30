@@ -3,10 +3,10 @@ require "giphy"
 class CommandLineInterface
 
   def welcome
-    puts "Welcome to a very hard trivia game!"
-    puts "Please type in your name:"
+    puts "\nWelcome to a very hard trivia game!"
+    puts "\nPlease type in your name:"
     user_input = gets.chomp
-    puts "Welcome #{user_input} to Triphy!"
+    puts "\nWelcome #{user_input} to Triphy!\n\n"
   end #end method
 
   # The CLI must provide access to data from a
@@ -16,6 +16,47 @@ class CommandLineInterface
   ####will then get asked a final_question
   ####if answers final question correctly,
   ####user "wins" game and sees a gif
+
+  # def ask_question_and_get_answer
+  #   puts random_q
+  #   user_input = gets.chomp
+  # end
+
+  def three_wins
+    counter = 0
+    questions = ["aaa?", "bbbb?", "ccc?", "ddd?", "eeee?"]
+    answer = "yes"
+    random_q = questions.sample
+
+    puts random_q
+    user_input = gets.chomp
+
+
+    until user_input == answer
+      puts "\nTry again!\n\n"
+      puts random_q
+      user_input = gets.chomp
+    end
+
+    if ((user_input == answer) && (counter < 2))
+      counter += 1
+      puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+      puts random_q
+      user_input = gets.chomp
+    end #end if statement
+
+    if ((user_input == answer) && (counter = 2))
+      counter += 1
+      puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+      puts "You win!"
+      open_gif
+    end #end if statement
+
+  end #end three_wins method
+
+
+  ################
+  ################
 
 
 
@@ -48,13 +89,13 @@ class CommandLineInterface
     user_input = gets.chomp
 
     until user_input == ANSWER
-      puts "Try again!"
+      puts "\nTry again!"
       puts QUESTION
       user_input = gets.chomp
     end
 
     if user_input == ANSWER
-      puts "Correct!"
+      puts "\nCorrect!"
       open_gif
     end
   end #end quiz_script
