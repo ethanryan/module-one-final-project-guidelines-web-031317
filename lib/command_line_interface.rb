@@ -30,9 +30,15 @@ class CommandLineInterface
       random_q = Question.all.sample #this gets us a random question
       question = random_q.question
       answer = random_q.answers[0].answer #[0] is same as first
+      #problem here is that questions with multiple answers
+      #will only take first answer... cuz of [0] above,
+      #used to get into array to get to answer string.
+      #want "What do you prefer: cats or dogs?"
+      #to take both answers as correct, but can't,
+      #and exec "giphy '#{answer}'" will relate to first answer too.
 
       puts question
-      user_input = gets.downcase.chomp
+      user_input = gets.chomp.downcase
 
       if user_input == answer
         counter += 1
