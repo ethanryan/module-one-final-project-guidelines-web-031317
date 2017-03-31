@@ -28,29 +28,24 @@ class CommandLineInterface
 
     until counter == 3
       random_q = Question.all.sample #this gets us a random question
-      question = random_q.question
-      answer = random_q.answers[0].answer #[0] is same as first
-      #problem here is that questions with multiple answers
-      #will only take first answer... cuz of [0] above,
-      #used to get into array to get to answer string.
-      #want "What do you prefer: cats or dogs?"
-      #to take both answers as correct, but can't,
-      #and exec "giphy '#{answer}'" will relate to first answer too.
+      question = random_q.question #this is the random question objects's question string
+      answer_array_of_strings = random_q.answers.map { |answer_obj| answer_obj.answer} #mapping over our random question's answer objects and returning an array containing their answers as strings
 
       puts question
       user_input = gets.chomp.downcase
 
-      if user_input == answer
-        counter += 1
+      if answer_array_of_strings.include?(user_input) #if our array of answer strings includes the user_input
+        counter += 1 #add a point to the counter
         puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
       else
         puts "\nTry again!\n\n"
       end #end if..else statement
     end #end until loop
 
-    if counter == 3
+
+    if counter == 3 #meaning user_input was correct...
       puts "You win!"
-      exec "giphy '#{answer}'" #YES!!!! works
+      exec "giphy '#{user_input}'" #YES!!!! show user a random gif related to their correct answer
       #open_gif
     end
   end #end method
