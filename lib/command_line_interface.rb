@@ -69,9 +69,6 @@ class CommandLineInterface
 
 
   def need_three_wins
-    #questions = ["aaa?", "bbbb?", "ccc?", "ddd?", "eeee?"]
-    #test_answer = "yes"
-    #random_q = questions.sample
 
     counter = 0
 
@@ -81,7 +78,7 @@ class CommandLineInterface
       answer = random_q.answers[0].answer #[0] is same as first
 
       puts question
-      user_input = gets.chomp
+      user_input = gets.downcase.chomp
 
       if user_input == answer
         counter += 1
@@ -98,28 +95,6 @@ class CommandLineInterface
     end
   end #end method
 
-
-
-
-
-
-
-  # q1 = Question.all.first.question
-  # a1 = Answer.all.first.answer
-
-  # (all caps question here) = Question.all.first.question
-  # ANSWER = Answer.all.first.answer
-
-  # make Q and A random instead of just first:::
-
-
-
-
-    # def open_gif
-    #   #giphy 'dance'
-    #   #exec 'giphy "dance"' #YES!!!! works
-    #   exec "giphy '#{a}'" #YES!!!! works
-    # end #end open_gif
 end #end class
 
 
