@@ -17,56 +17,10 @@ class CommandLineInterface
   ####if answers final question correctly,
   ####user "wins" game and sees a gif
 
-
-
-  # def ask_question_and_get_answer
-  #   puts random_q
-  #   user_input = gets.chomp
-  # end
-
-
-
-# while conditional [do]
-#    code
-# end
-# Executes code while conditional is true.
-# A while loop's conditional is separated from
-# code by the reserved word do, a newline,
-#   backslash \, or a semicolon ;.
-
+#need to: ask user question from database
 
 #ANSWER = Answer.all.sample.answer #how do we make sure the answer to the random question is the correcct one??
-#ANSWER needs to = (all caps question)....answers
-
 ###how do we make random question match up with its correct answer??
-
-# def quiz_script
-#   puts (ALL CAPS question)
-#   user_input = gets.chomp
-#
-#   until user_input == ANSWER
-#     puts "\nTry again!"
-#     puts (ALL CAPS question)
-#     user_input = gets.chomp
-#   end
-#
-#   if user_input == ANSWER
-#     puts "\nCorrect!"
-#     open_gif
-#   end
-# end #end quiz_script
-
-# until conditional [do]
-#    code
-# end
-# Executes code while conditional is false.
-# An until statement's conditional is separated
-# from code by the reserved word do, a newline, or a semicolon.
-# RANDOM_QUESTION = Question.all.sample #this gets us a random question
-# all caps question = RANDOM_QUESTION.question
-# #ANSWER = RANDOM_QUESTION.answers.first.answer
-# ANSWER = RANDOM_QUESTION.answers[0].answer
-
 
   def need_three_wins
 
@@ -96,57 +50,3 @@ class CommandLineInterface
   end #end method
 
 end #end class
-
-
-##############
-##  need to:::
-
-#ask question from database <<--- how???
-
-#if user_input == correct answer,
-#say "Correct!" and show them a gif
-#else
-#say "Wrong answer, try again!"
-
-
-
-
-
-
-
-
-
-
-########almost works, but logic is off......
-# def three_wins
-#   counter = 0
-#   questions = ["aaa?", "bbbb?", "ccc?", "ddd?", "eeee?"]
-#   test_answer = "yes"
-#   random_q = questions.sample
-#   puts random_q
-#   user_input = gets.chomp
-#
-#   until user_input == test_answer
-#     puts "\nTry again!\n\n"
-#     puts random_q
-#     user_input = gets.chomp
-#   end
-#
-#   if ((user_input == test_answer) && (counter < 2))
-#     counter += 1
-#     puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
-#     puts random_q
-#     user_input = gets.chomp
-#   end #end if statement
-#
-#   if ((user_input == test_answer) && (counter == 2))
-#     counter += 1
-#     puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
-#     puts "You win!"
-#     open_gif
-#   end #end if statement
-#end three_wins method
-
-
-################
-################
