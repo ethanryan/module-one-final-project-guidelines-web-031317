@@ -3,10 +3,10 @@ require "giphy"
 class CommandLineInterface
 
   def welcome
-    puts "\nWelcome to a very hard trivia game!"
-    puts "\nPlease type in your name:"
-    user_input = gets.chomp
-    puts "\nWelcome #{user_input} to Triphy!\n\n"
+    puts "\nWelcome to a very hard trivia game!".yellow
+    puts "\nPlease type in your name:".yellow
+    user_input = gets.chomp.capitalize
+    puts "\n\n* * * * Welcome #{user_input} to Triphy! * * * *\n".white.on_blue
   end #end method
 
   # The CLI must provide access to data from a
@@ -31,17 +31,16 @@ class CommandLineInterface
       question = random_q.question #this is the random question objects's question string
       answer_array_of_strings = random_q.answers.map { |answer_obj| answer_obj.answer} #mapping over our random question's answer objects and returning an array containing their answers as strings
 
-      puts question
+      puts question.yellow
       user_input = gets.chomp.downcase
 
       if answer_array_of_strings.include?(user_input) #if our array of answer strings includes the user_input
         counter += 1 #add a point to the counter
-        puts "\nCorrect! You have answered #{counter} out of 3 questions correctly.\n\n"
+        puts "\nCorrect! You have answered #{counter} questions correctly. Answer 3 correctly to win!\n\n"
       else
-        puts "\nTry again!\n\n"
+        puts "\nTry again!\n\n".red
       end #end if..else statement
     end #end until loop
-
 
     if counter == 3 #meaning user_input was correct...
       puts "You win!"
